@@ -1,18 +1,18 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LessonModule } from './lesson/lesson.module';
-import { TeacherModule } from './teacher/teacher.module';
-import { StudentModule } from './student/student.module';
+import { LessonsModule } from './lessons/lessons.module';
+import { TeachersModule } from './teachers/teachers.module';
+import { StudentsModule } from './students/students.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    LessonModule,
-    TeacherModule,
-    StudentModule,
+    LessonsModule,
+    TeachersModule,
+    StudentsModule,
     MongooseModule.forRoot(
-      'mongodb://altriayu:pendragon@localhost:27017/?authSource=admin&authMechanism=SCRAM-SHA-256&readPreference=primary&appname=MongoDB%20Compass&ssl=false',
+      'mongodb://altriayu:pendragon@localhost:27017/altriaTest?authSource=admin',
     ),
   ],
   controllers: [AppController],
